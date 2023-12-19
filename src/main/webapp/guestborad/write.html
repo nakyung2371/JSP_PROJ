@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>간단한 방명록 만들기</title>
+</head>
+
+<body>
+
+	<center>		
+	<h2> 간단한 방명록 </h2>
+	<hr>
+	<!--
+		MVC Model 1 개발: 개인 혼자 개발, 50 page 내외, 사이트 규모가 커지면 유지 보수하기 힘들다.
+			개발은 빠르게 할 수 있다, 중복 코드가 계속 발생됨, JSP <% 자바코드 %>
+			jsp: HTML + Java(전체)
+			
+		MVC Model 2 개발(MVC 개발): jsp: HTML + Java(최소), 대규모 사이트,
+			디자이너 + 개발자가 분리해서, 협업(여러 명의 개발자가 협업하면서 개발)
+			초기 개발이 어려울 수 있다. 유지 보수하기 쉬운 코드를 만들 수 있다. 중복 코드를 방지할 수 있다.
+		
+	form: client의 값을 받아서 서버로 전송해주는 태그
+			- name: 변수명
+			- method: post: http 헤더 앞에 변수와 값을 전송, 무제한 전송
+					get: http URL에 ?변수=값, 변수=값, ... 서버로 전송
+						- URL에 변수와 값이 노출됨, 보안에 약하다.
+						- 최대 255byte까지만 전송
+					
+			- action: 서버에 호출할 페이지
+			
+			- input, textarea
+			
+	
+	-->
+	<form name = "guestboard" method ="get" action = "save.jsp">
+	<table border = "1" width = "600px">
+		<tr><td> 이름 </td>
+			<td> <input type = "text" name = "name"> </td>
+		</tr>
+		<tr><td> E-mail </td>
+			<td> <input type = "text" name = "email"> </td>
+		</tr>
+		<tr><td> 제목 </td>
+			<td> <input type = "text" name = "subject"> </td>
+		</tr>
+		<tr><td> 내용 </td>
+			<td> <textarea  cols = "65" rows = "10" name = "contents"> </textarea> </td>
+		</tr>
+		<tr><td colspan = "2" align = "right">
+				<input type = "reset" value = "리셋">
+				<input type = "submit" value = "전송"> 
+			</td>
+		</tr>
+	</table>
+	</form>
+	
+	<p>
+	<hr>
+	<p>
+	
+	<table border = "1" width = "600px">
+		<tr><td> 이름 </td><td> 홍길동 </td></tr>
+		<tr><td> E-mail </td><td> aaa@aaa.com </td></tr>
+		<tr><td> 제목 </td><td> 제목입니다. </td></tr>
+		<tr><td> 내용 </td><td> 내용입니다. </td></tr>
+	</table>
+
+	
+	<!--  html 주석 -->
+	<br><br>
+	<hr>
+	
+	<!-- 
+		html 스페이스바, enter가 작동이 안됨
+			&nbsp;	<- 스페이스바
+			<br>	<- enter
+	 -->
+	
+	오늘은 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BackEnd의
+	<br> JSP를 <br><br>
+	배웁니다.
+	
+	<br><br>
+	<hr>
+	
+	
+	
+	</center>
+</body>
+</html>
