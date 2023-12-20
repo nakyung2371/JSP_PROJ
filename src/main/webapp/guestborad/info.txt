@@ -1,0 +1,30 @@
+
+
+JDBC: 자바에서 여러 DBMS를 접속 가능하도록 생성된 인터페이스
+
+java.sql.*;
+Connection 객체: DBMS(Oracle(XE), MSSQL(myDB), MySQL(myDB))의 DataBase에 접속 객체
+			localhost: 자신의 시스템
+			ID, Password
+			
+Statement 객체: DB에 SQL 쿼리를 보내는 객체
+	- Connection 객체로 Statement 객체 생성, conn.createStatement();
+	- stmt = conn.createStatement();
+	- stmt.execute(sql);		-- sql 변수의 SQL 쿼리: insert, update, delete		<- commit 톰켓에서 작동시킴
+
+PreparedStatement 객체: DB에 SQL 쿼리를 보내는 객체, 복잡한 쿼리인 경우 쉽게 처리됨
+	- Connection 객체로 Statement 객체 생성
+	- pstmt = conn.prepareStatement(sql);
+	- sql: ?의 변수값을 할당하고 실행
+	
+
+Recodset 객체: DataBase의 레코드를 읽어오는 객체
+
+
+Oracle 테이블 생성
+create table guestboard(
+	name varchar2(200),
+	email varchar2(200),
+	subject varchar2(200),
+	content varchar2(200)
+	);

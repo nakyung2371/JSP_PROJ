@@ -16,18 +16,24 @@
 <%@ include file = "../db_conn/db_conn_oracle.jsp" %>
 
 <%
-	String sql = null;
-	Statement stmt = null;
+	String sql = null;			
+	PreparedStatement pstmt = null;	
 	
 	sql = "insert into mem (name, age, weight, addr, phone)";
-	sql = sql + "values('" + na + "', '" + ad +"', '" + we + "', '" + ar +"', '" + ph + "')";
+	sql = sql + " values (?,?,?,?,?)";
 	
-	out.println(sql);
+	//out.println(sql);
 	
-	stmt = conn.createStatement();
+	pstmt = conn.prepareStatement(sql);
+	
+	pstmt.setString(1, na);
+	pstmt.setString(2, ad);
+	pstmt.setString(3, we);
+	pstmt.setString(4, ar);	
+	pstmt.setString(5, ph);	
 	
 	try {
-		stmt.execute(sql);
+		pstmt.executeUpdate();
 		
 	} catch (Exception e) {
 		
@@ -55,6 +61,6 @@
 	주소 <%= ar %> <br>
 	핸드폰 번호 <%= ph %> <br>
 	
-	<h1> Statement </h1>
+	<h1> PreparedStatement </h1>
 </body>
 </html>

@@ -1,0 +1,7 @@
+
+
+DB에 테이블 이름: mem 테이블 생성 후 값 저장
+	모든 컬럼은 varchar(200)
+	
+LAB에서 save1.jsp: Statement 객체로 DB에 값을 저장함
+LAB에서 save2.jsp: PrepareStatement 객체로 DB에 값을 저장함
