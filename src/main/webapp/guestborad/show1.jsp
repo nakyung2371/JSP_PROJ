@@ -5,7 +5,7 @@
 <%@ page import = "java.sql.*" %>
 
 <!-- conn: oracle xe -->
-<%@ include file = "../db_conn/db_conn_oracle.jsp" %>
+<%@ include file = "../db_conn/db_conn_mysql.jsp" %>
 
 <% 
 //변수를 초기화

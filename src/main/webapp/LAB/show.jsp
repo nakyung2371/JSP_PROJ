@@ -42,16 +42,15 @@ try {
 		
 	%>
 			<table border="1" width = 600>
-			<tr><td colspan = "2"> <%= rs.getString("subject") %></td></tr>
-			<tr><td>글쓴이: </td><td><%= rs.getString("name") %></td></tr>
-			<tr><td>이메일: </td><td><%= rs.getString("email") %></td></tr>
-			<tr><td>글내용: </td><td><%= rs.getString("content") %></td></tr>
+			<tr><td>이름: </td><td><%= rs.getString("name") %></td></tr>
+			<tr><td>나이: </td><td><%= rs.getString("age") %></td></tr>
+			<tr><td>몸무게: </td><td><%= rs.getString("weight") %></td></tr>
+			<tr><td>주소: </td><td><%= rs.getString("addr") %></td></tr>
+			<tr><td>핸드폰 번호: </td><td><%= rs.getString("phone") %></td></tr>
 			</table>
 			<br>	
 	
 	<%
-	
-
 			} while (rs.next());
 		}
 	

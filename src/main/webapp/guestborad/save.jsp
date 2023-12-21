@@ -22,7 +22,7 @@
 
 %>
 <!-- DB Connection 객체를 불러들임 -->
-<%@ include file = "../db_conn/db_conn_oracle.jsp" %>
+<%@ include file = "../db_conn/db_conn_mssql.jsp" %>
 
 <!-- Statement 객체를 사용해서 DB에 저장함 -->
 <%
